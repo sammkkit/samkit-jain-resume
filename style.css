@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c2c2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 14rem;
+    margin-bottom: 20px;
+    font-family: 'Brush Script MT', cursive;
+}
+
+#social-links ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#social-links li {
+    margin: 0 15px;
+}
+
+#social-links a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+#social-links a img:hover {
+    transform: scale(1.1);
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: #0073e6;
+}
