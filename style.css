@@ -1,7 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    box-sizing: border-box;
     background-color: #2c2c2c;
     display: flex;
     justify-content: center;
@@ -13,7 +14,8 @@ body {
 }
 
 h1 {
-    font-size: 14rem;
+    font-size: 14vw; /* Changed from rem to vw */
+    font-size: clamp(14px, 14vw, 14rem); /* Limit maximum font size */
     margin-bottom: 20px;
     font-family: 'Brush Script MT', cursive;
 }
@@ -23,10 +25,11 @@ h1 {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #social-links li {
-    margin: 0 15px;
+    margin: 10px;
 }
 
 #social-links a img {
@@ -46,4 +49,20 @@ a {
 
 a:hover {
     color: #0073e6;
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 18vw;
+    }
+
+    #social-links a img {
+        width: 30px;
+        height: 30px;
+    }
 }
