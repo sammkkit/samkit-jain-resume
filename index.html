@@ -1,28 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samkit Jain's Resume</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/user.png">
+    <title>Samkit Jain</title>
 </head>
+
 <body>
-    <header>
-        <h1>Samkit Jain</h1>
-    </header>
-    <main>
-        <section id="social-links">
-            <ul>
-                <li><a href="https://github.com/sammkkit" target="_blank" rel="noopener noreferrer">
-                    <img src="images/github.png" alt="GitHub"></a></li>
-                <li><a href="https://www.linkedin.com/in/samkit-jain-ba02a41b8/" target="_blank" rel="noopener noreferrer">
-                    <img src="images/linkedin.png" alt="LinkedIn"></a></li>
-                <li><a href="https://leetcode.com/u/samkitjain430/" target="_blank" rel="noopener noreferrer">
-                    <img src="images/leetcode2.png" alt="LeetCode"></a></li>
-                <li><a href="https://www.codechef.com/users/samkitj" target="_blank" rel="noopener noreferrer">
-                    <img src="images/codechef.png" alt="CodeChef"></a></li>
-            </ul>
+    <div id="container--main">
+        <button id="theme-toggle-btn">
+            <img src="assets/night.png" alt="Toggle Theme" id="theme-icon" />
+        </button>
+        <section class="section--page" id="wrapper--hero">
+            <img src="./assets/user.png" alt="Samkit Jain" id="profile-pic" title="Samkit Jain" />
+            <div>
+                <h1 id="user-name">Samkit Jain</h1>
+                <p id="bio">
+                    I am currently a Btech 2nd-year student and a passionate Android developer.
+                    Have an idea? Let's collaborate! Email me at
+                    <a href="mailto:samkitjain430@gmail.com">samkitjain430@gmail.com</a>.
+                </p>
+            </div>
         </section>
-    </main>
+
+        <section class="section--page">
+            <div id="socials--list">
+                <a href="https://github.com/sammkkit" target="_blank">
+                    <img src="assets/github.svg" alt="GitHub" title="GitHub" />
+                </a>
+                <a href="https://www.linkedin.com/in/samkit-jain-ba02a41b8/" target="_blank">
+                    <img src="assets/linkedin.svg" alt="LinkedIn" title="LinkedIn" />
+                </a>
+                <a href="https://www.instagram.com/sammkkit_jain" target="_blank">
+                    <img src="assets/instagram.svg" alt="Instagram" title="Instagram" />
+                </a>
+            </div>
+        </section>
+
+        <section class="section--page">
+            <h2>Skills & Qualifications</h2>
+            <ul id="qualifications--list">
+                <li>✔️ 6 months experience in Android App Development</li>
+                <li>✔️ Best practices knowledge of Git & GitHub</li>
+            </ul>
+            <button id="download-resume-btn" onclick="downloadResume()">
+                Download Resume <img src="assets/download.png" alt="Download Icon" />
+            </button>
+        </section>
+
+        <section class="section--page">
+            <h2>Tech Stack</h2>
+            <div id="wrapper--techstack__items">
+                <div class="card--techstack"><span>Android Development, Android Studio</span></div>
+                <div class="card--techstack"><span>MVVM Architecture</span></div>
+                <div class="card--techstack"><span>C, C++, Python, Kotlin</span></div>
+                <div class="card--techstack"><span>Git & GitHub</span></div>
+                <div class="card--techstack"><span>Firebase Realtime DB</span></div>
+                <div class="card--techstack"><span>Linux, Ubuntu</span></div>
+            </div>
+        </section>
+
+        <section class="section--page" id="work-history-wrapper">
+            <h2>Projects</h2>
+            <div class="line-break"></div>
+            <div class="card--work-history">
+                <strong>GeoLog</strong>
+                <p>
+                    The Automatic Attendance Manager app streamlines and automates attendance tracking for employees based on geolocation. It allows users to check in and check out based on their proximity to the office location and calculates total working hours for the day. The app is built with Jetpack Compose, Firebase Authentication, and Google Maps.
+                </p>
+                <button class="button" onclick='window.open("https://github.com/sammkkit/AttendanceTrackingApp", "_blank")'>
+                    GitHub Repo <img src="assets/newtab.svg" />
+                </button>
+            </div>
+            <div class="line-break"></div>
+            <div class="card--work-history">
+                <strong>Vichaar</strong>
+                <p>
+                    Vichar is a social media application built with Android Studio, Jetpack Compose, and Firebase. It uses the Firebase Realtime Database for storage.
+                </p>
+                <button class="button" onclick='window.open("https://github.com/sammkkit/VicharApp", "_blank")'>
+                    GitHub Repo <img src="assets/newtab.svg" />
+                </button>
+            </div>
+        </section>
+
+        <div class="line-break"></div>
+        <p class="footer-text">
+            Thanks for visiting <span style="font-size: 35px;">&lt;</span>3
+        </p>
+        
+        <div id="scroll-buttons">
+            <button id="go-top-btn">
+                <img src="assets/up.svg" alt="Go to Top" />
+            </button>
+            <button id="goBottom">
+                <img src="assets/down.svg" alt="Go to Bottom" />
+            </button>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
 </body>
+
 </html>

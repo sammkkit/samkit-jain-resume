@@ -1,68 +1,363 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+@import url(https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap);
+
+:root {
+    --mainTextColor-dark: #fff;
+    --secondaryTextColor-dark: #adb0b1;
+    --mainLinkColor-dark: rgb(30, 190, 214);
+    --mainBorderColor-dark: #2b3031;
+    --mainBgColor-dark: #131415;
+    --mainTextColor: var(--mainTextColor-dark);
+    --secondaryTextColor: var(--secondaryTextColor-dark);
+    --mainLinkColor: var(--mainLinkColor-dark);
+    --mainBorderColor: var(--mainBorderColor-dark);
+    --mainBgColor: var(--mainBgColor-dark)
+}
+
+* {
+    font-family: 'Readex Pro';
+    line-height: 1.5em;
     box-sizing: border-box;
-    background-color: #2c2c2c;
-    display: flex;
-    justify-content: center;
+    color: var(--mainTextColor)
+}
+#download-resume-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
     align-items: center;
-    height: 100vh;
-    color: #fff;
+    gap: 8px;
+}
+
+#download-resume-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+#download-resume-btn:hover {
+    background-color: #45a049;
+}
+
+
+body {
+    background-color: var(--mainBgColor)
+}
+
+.footer-text {
     text-align: center;
-    flex-direction: column;
+    font-size: 28px;
 }
 
-h1 {
-    font-size: 14vw; /* Changed from rem to vw */
-    font-size: clamp(14px, 14vw, 14rem); /* Limit maximum font size */
-    margin-bottom: 20px;
-    font-family: 'Brush Script MT', cursive;
-}
-
-#social-links ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-#social-links li {
-    margin: 10px;
-}
-
-#social-links a img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s;
-}
-
-#social-links a img:hover {
-    transform: scale(1.1);
+p,
+span,
+li {
+    color: var(--secondaryTextColor);
+    font-size: 1em
 }
 
 a {
     text-decoration: none;
+    color: var(--mainLinkColor);
+    font-weight: 500
+}
+
+li {
+    line-height: 1.9em
+}
+
+#container--main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1em
+}
+
+.section--page {
+    padding-top: 1em;
+    padding-bottom: 1em
+}
+
+#wrapper--hero {
+    display: flex;
+    align-items: center;
+    gap: 4em
+}
+
+#bio,
+a {
+    font-weight: 300
+}
+
+#user-name {
+    font-size: 32px
+}
+
+#profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%
+}
+
+#email {
+    color: var(--mainTextColor)
+}
+
+#socials--list {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5px;
+    flex-wrap: wrap
+}
+
+#socials--list a {
+    font-weight: 300;
+    color: var(--secondaryTextColor);
+    font-size: .9em;
+    transition: 0.3s
+}
+
+#socials--list a:hover {
+    font-weight: 100;
+    color: var(--mainLinkColor);
+    font-size: .9em
+}
+
+#qualifications--list {
+    list-style: none
+}
+
+#wrapper--techstack__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    font-size: .9em
+}
+
+.card--techstack {
+    border: 1px solid var(--mainBorderColor);
+    border-radius: 5px;
+    padding: .5em 1em;
+    align-items: center
+}
+
+.card--work-history {
+    border-left: 1px solid var(--mainBorderColor);
+    margin-top: 3em;
+    margin-bottom: 3em;
+    padding-left: 2em
+}
+
+.line-break {
+    background-color: var(--mainBorderColor);
+    height: 1px
+}
+
+.card--project {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-top: 1px solid var(--mainBorderColor)
+}
+
+.card--project a {
+    color: var(--mainTextColor);
+    transition: 0.3s
+}
+
+.card--project a:hover {
+    color: rgb(30, 190, 214)
+}
+
+@media(max-width:600px) {
+    .section--page {
+        padding-top: 1em;
+        padding-bottom: 1em
+    }
+
+    #wrapper--hero {
+        gap: 1em;
+        flex-direction: column
+    }
+
+    #profile-pic {
+        width: 200px;
+        height: 200px
+    }
+
+    .card--work-history {
+        border-left: none;
+        padding-left: 0
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2b3031;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out
+}
+
+.button:hover {
+    background-color: #555
+}
+
+.button img {
+    margin-left: 5px;
+    fill: currentColor;
+    height: 16px;
+    width: 16px
+}
+
+.sponsor img {
+    margin-top: 2px;
+    margin-bottom: -2px;
+    margin-right: 2px;
+    margin-left: -3px;
+    fill: currentColor;
+    height: 18px;
+    width: 18px
+}
+
+.sponsor {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2b3031;
     color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out
 }
 
-a:hover {
-    color: #0073e6;
+.sponsor:hover {
+    background-color: #555
 }
 
-/* Add media queries for responsiveness */
-@media screen and (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
+#go-top-btn {
+    position: fixed;
+    bottom: -50px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #2b3031;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+    transition: bottom 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
 
-    h1 {
-        font-size: 18vw;
-    }
+#go-top-btn:hover {
+    background-color: #555
+}
 
-    #social-links a img {
-        width: 30px;
-        height: 30px;
-    }
+#go-top-btn img {
+    width: 25px;
+    height: 25px;
+    fill: #fff
+}
+
+#goBottom {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #2b3031;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+    transition: bottom 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#goBottom:hover {
+    background-color: #555
+}
+
+#goBottom img {
+    width: 25px;
+    height: 25px;
+    fill: #fff
+}
+
+#socials--list {
+    padding: 10px;
+}
+
+#socials--list img {
+    width: 25px;
+    height: 25px;
+    fill: #fff
+}
+
+
+#theme-toggle-btn {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #2b3031;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle-btn:hover {
+    background-color: #555;
+}
+/* Dark Mode */
+body:not(.light-mode) #socials--list img {
+    filter: invert(1) brightness(2);
+}
+
+/* Light Mode */
+body.light-mode #socials--list img {
+    filter: none; /* or adjust with filters if needed */
+}
+
+#theme-icon {
+    visibility: visible; /* Ensure it's not set to hidden */
+    opacity: 1; 
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+}
+
+/* Light Mode Variables */
+:root.light-mode {
+    --mainTextColor: #000;
+    --secondaryTextColor: #333;
+    --mainLinkColor: rgb(30, 144, 255);
+    --mainBorderColor: #ddd;
+    --mainBgColor: #f9f9f9;
+}
+
+body.light-mode {
+    background-color: var(--mainBgColor);
+}
+
+.light-mode p,
+.light-mode li,
+.light-mode span {
+    color: var(--secondaryTextColor);
 }
