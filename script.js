@@ -32,11 +32,14 @@ function downloadResume() {
 
 const toggleBtn = document.getElementById("theme-toggle-btn");
 const themeIcon = document.getElementById("theme-icon");
+const socialIcons = document.querySelectorAll("#socials--list img");
+const profilePic = document.getElementById("profile-pic");
 
 // Check for previously saved theme preference
 const currentTheme = localStorage.getItem("theme") || "dark";
 document.documentElement.classList.toggle("light-mode", currentTheme === "light");
-themeIcon.src = currentTheme === "light" ? "assets/sun.svg" : "assets/moon.svg";
+themeIcon.src = currentTheme === "light" ? "assets/moon.svg" : "assets/sun.svg";
+updateIconsTint(currentTheme === "light");
 
 // Toggle theme on button click
 toggleBtn.addEventListener("click", () => {
@@ -44,9 +47,21 @@ toggleBtn.addEventListener("click", () => {
     const theme = isLightMode ? "light" : "dark";
 
     // Update icon
-    themeIcon.src = isLightMode ? "assets/sun.svg" : "assets/moon.svg";
+    themeIcon.src = isLightMode ? "assets/moon.svg" : "assets/sun.svg";
+
+    // Update icons tint
+    updateIconsTint(isLightMode);
 
     // Save theme preference in local storage
     localStorage.setItem("theme", theme);
 });
+
+function updateIconsTint(isLightMode) {
+    socialIcons.forEach(icon => {
+        icon.style.filter = isLightMode ? "none" : "invert(1) brightness(2)";
+    });
+    
+    // Update profile picture tint
+    profilePic.style.filter = isLightMode ? "none" : "brightness(0.8) contrast(1.2)";
+}
 

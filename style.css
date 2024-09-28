@@ -10,15 +10,133 @@
     --secondaryTextColor: var(--secondaryTextColor-dark);
     --mainLinkColor: var(--mainLinkColor-dark);
     --mainBorderColor: var(--mainBorderColor-dark);
-    --mainBgColor: var(--mainBgColor-dark)
+    --mainBgColor: var(--mainBgColor-dark);
+    --toggle-btn-bg: rgb(253, 252, 252);
+}
+
+/* Light Mode Variables */
+:root.light-mode {
+    --mainTextColor: #000;
+    --secondaryTextColor: #333;
+    --mainLinkColor: rgb(30, 144, 255);
+    --mainBorderColor: #ddd;
+    --mainBgColor: #f9f9f9;
 }
 
 * {
     font-family: 'Readex Pro';
     line-height: 1.5em;
     box-sizing: border-box;
-    color: var(--mainTextColor)
+    color: var(--mainTextColor);
 }
+
+body {
+    background-color: var(--mainBgColor);
+}
+
+p,
+span,
+li {
+    color: var(--secondaryTextColor);
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--mainLinkColor);
+    font-weight: 500;
+}
+
+li {
+    line-height: 1.9em;
+}
+
+#container--main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.section--page {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#wrapper--hero {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+}
+
+#bio,
+a {
+    font-weight: 300;
+}
+
+#user-name {
+    font-size: 32px;
+}
+
+/* Profile Picture */
+#profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: filter 0.3s ease;
+}
+
+/* Profile picture filter styles for Dark mode */
+body:not(.light-mode) #profile-pic {
+    filter: brightness(0.8) contrast(1.2);
+}
+
+/* Profile picture filter styles for Light mode */
+body.light-mode #profile-pic {
+    filter: none;
+}
+
+#email {
+    color: var(--mainTextColor);
+}
+
+#socials--list {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+#socials--list a {
+    font-weight: 300;
+    color: var(--secondaryTextColor);
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+#socials--list a:hover {
+    font-weight: 100;
+    color: var(--mainLinkColor);
+    font-size: 0.9em;
+}
+
+#socials--list img {
+    width: 25px;
+    height: 25px;
+    transition: filter 0.3s ease;
+}
+
+/* Dark Mode */
+body:not(.light-mode) #socials--list img {
+    filter: invert(1) brightness(2);
+}
+
+/* Light Mode */
+body.light-mode #socials--list img {
+    filter: invert(0) brightness(0);
+}
+
 #download-resume-btn {
     background-color: #4CAF50;
     color: white;
@@ -41,158 +159,54 @@
     background-color: #45a049;
 }
 
-
-body {
-    background-color: var(--mainBgColor)
-}
-
-.footer-text {
-    text-align: center;
-    font-size: 28px;
-}
-
-p,
-span,
-li {
-    color: var(--secondaryTextColor);
-    font-size: 1em
-}
-
-a {
-    text-decoration: none;
-    color: var(--mainLinkColor);
-    font-weight: 500
-}
-
-li {
-    line-height: 1.9em
-}
-
-#container--main {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 1em
-}
-
-.section--page {
-    padding-top: 1em;
-    padding-bottom: 1em
-}
-
-#wrapper--hero {
-    display: flex;
-    align-items: center;
-    gap: 4em
-}
-
-#bio,
-a {
-    font-weight: 300
-}
-
-#user-name {
-    font-size: 32px
-}
-
-#profile-pic {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%
-}
-
-#email {
-    color: var(--mainTextColor)
-}
-
-#socials--list {
-    display: flex;
-    justify-content: space-between;
-    column-gap: 5px;
-    flex-wrap: wrap
-}
-
-#socials--list a {
-    font-weight: 300;
-    color: var(--secondaryTextColor);
-    font-size: .9em;
-    transition: 0.3s
-}
-
-#socials--list a:hover {
-    font-weight: 100;
-    color: var(--mainLinkColor);
-    font-size: .9em
-}
-
 #qualifications--list {
-    list-style: none
+    list-style: none;
 }
 
 #wrapper--techstack__items {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
-    font-size: .9em
+    font-size: 0.9em;
 }
 
 .card--techstack {
     border: 1px solid var(--mainBorderColor);
     border-radius: 5px;
-    padding: .5em 1em;
-    align-items: center
+    padding: 0.5em 1em;
+    align-items: center;
 }
 
 .card--work-history {
     border-left: 1px solid var(--mainBorderColor);
     margin-top: 3em;
     margin-bottom: 3em;
-    padding-left: 2em
+    padding-left: 2em;
 }
 
 .line-break {
     background-color: var(--mainBorderColor);
-    height: 1px
+    height: 1px;
 }
 
 .card--project {
     padding-top: 1em;
     padding-bottom: 1em;
-    border-top: 1px solid var(--mainBorderColor)
+    border-top: 1px solid var(--mainBorderColor);
 }
 
 .card--project a {
     color: var(--mainTextColor);
-    transition: 0.3s
+    transition: 0.3s;
 }
 
 .card--project a:hover {
-    color: rgb(30, 190, 214)
+    color: rgb(30, 190, 214);
 }
 
-@media(max-width:600px) {
-    .section--page {
-        padding-top: 1em;
-        padding-bottom: 1em
-    }
-
-    #wrapper--hero {
-        gap: 1em;
-        flex-direction: column
-    }
-
-    #profile-pic {
-        width: 200px;
-        height: 200px
-    }
-
-    .card--work-history {
-        border-left: none;
-        padding-left: 0
-    }
-}
-
-.button {
+/* Buttons */
+.button,
+.sponsor {
     display: inline-block;
     padding: 10px 20px;
     background-color: #2b3031;
@@ -200,18 +214,21 @@ a {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out
+    transition: all 0.3s ease-in-out;
+    color: #fff;
 }
 
-.button:hover {
-    background-color: #555
+.button:hover,
+.sponsor:hover {
+    background-color: #555;
 }
 
-.button img {
+.button img,
+.sponsor img {
     margin-left: 5px;
     fill: currentColor;
     height: 16px;
-    width: 16px
+    width: 16px;
 }
 
 .sponsor img {
@@ -221,52 +238,11 @@ a {
     margin-left: -3px;
     fill: currentColor;
     height: 18px;
-    width: 18px
+    width: 18px;
 }
 
-.sponsor {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2b3031;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out
-}
-
-.sponsor:hover {
-    background-color: #555
-}
-
-#go-top-btn {
-    position: fixed;
-    bottom: -50px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #2b3031;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
-    transition: bottom 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
-
-#go-top-btn:hover {
-    background-color: #555
-}
-
-#go-top-btn img {
-    width: 25px;
-    height: 25px;
-    fill: #fff
-}
-
+/* Go to Top Button */
+#go-top-btn,
 #goBottom {
     position: fixed;
     bottom: 20px;
@@ -277,40 +253,31 @@ a {
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
-    transition: bottom 0.3s ease;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    transition: bottom 0.3s ease;
 }
 
+#go-top-btn:hover,
 #goBottom:hover {
-    background-color: #555
+    background-color: #555;
 }
 
+#go-top-btn img,
 #goBottom img {
     width: 25px;
     height: 25px;
-    fill: #fff
+    fill: #fff;
 }
-
-#socials--list {
-    padding: 10px;
-}
-
-#socials--list img {
-    width: 25px;
-    height: 25px;
-    fill: #fff
-}
-
-
+/* Theme Toggle Button */
 #theme-toggle-btn {
     display: block;
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #2b3031;
+    background-color: var(--toggle-btn-bg);
     border: none;
     border-radius: 50%;
     padding: 10px;
@@ -318,46 +285,40 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease;
 }
 
 #theme-toggle-btn:hover {
-    background-color: #555;
-}
-/* Dark Mode */
-body:not(.light-mode) #socials--list img {
-    filter: invert(1) brightness(2);
-}
-
-/* Light Mode */
-body.light-mode #socials--list img {
-    filter: none; /* or adjust with filters if needed */
+    background-color: #546f55;
 }
 
 #theme-icon {
-    visibility: visible; /* Ensure it's not set to hidden */
-    opacity: 1; 
+    visibility: visible;
+    opacity: 1;
     width: 20px;
     height: 20px;
     fill: #fff;
 }
 
-/* Light Mode Variables */
-:root.light-mode {
-    --mainTextColor: #000;
-    --secondaryTextColor: #333;
-    --mainLinkColor: rgb(30, 144, 255);
-    --mainBorderColor: #ddd;
-    --mainBgColor: #f9f9f9;
-}
+@media(max-width:600px) {
+    .section--page {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
 
-body.light-mode {
-    background-color: var(--mainBgColor);
-}
+    #wrapper--hero {
+        gap: 1em;
+        flex-direction: column;
+    }
 
-.light-mode p,
-.light-mode li,
-.light-mode span {
-    color: var(--secondaryTextColor);
+    #profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+
+    .card--work-history {
+        border-left: none;
+        padding-left: 0;
+    }
 }
