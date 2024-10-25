@@ -27,7 +27,7 @@ document.getElementById("go-top-btn").addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 function downloadResume() {
-    window.open('./assets/Resume_samkitjain_oct.pdf', '_blank');
+    window.open('./assets/Samkit_resume_october.pdf', '_blank');
 }
 
 const toggleBtn = document.getElementById("theme-toggle-btn");
